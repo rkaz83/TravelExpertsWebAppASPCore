@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TravelExpertsData.Models.Booking>
+
+@*Author: Aaron Li
+February 18, 2023*@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>My Bookings</h1>
+<hr />
+<div>
+    <a asp-action="CostBreakdown">Cost Breakdown</a>
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.TravelerCount)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.PackageId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingDate)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.TravelerCount)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.PackageId)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id=item.BookingId }) |
+                @Html.ActionLink("Remove Booking", "Delete", new { id=item.BookingId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

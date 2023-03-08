@@ -1,0 +1,68 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*Author Rabab Kaz Dated ::after feb 2023*/
+/*Css form main page low opacity picture and text */
+.low-opacity-bg-image::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: blue;
+    opacity: .6;
+    background-size: cover;
+    background-position: center, center;
+    background-image: url('../images/slider2.jpg');
+}
+
+
+
+.fade-in-text {
+    font-family: "montserrat-medium",'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+    font-size: 6.3rem;
+    animation: fadeIn 8s;
+    line-height: 1.333;
+    margin-top: 20%;
+    color: Black;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.column {
+    float: left;
+    padding-bottom:20px;
+    padding-right:30px;
+    
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

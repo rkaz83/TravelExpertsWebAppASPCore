@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TravelExpertsData.Models.BookingDetail>
+
+@*Author: Aaron Li
+February 18, 2023*@
+
+@{
+    ViewData["Title"] = "Cost Breakdown";
+}
+
+<h1>Cost Breakdown for All Bookings</h1>
+<hr />
+<table class="table w-auto">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BasePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgencyCommission)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgencyCommission)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Total Price:</dt>
+        <dd class="col-sm-10">@ViewBag.BasePrice.ToString("c")</dd>
+        <dt class="col-sm-2">Total Commision:</dt>
+        <dd class="col-sm-10">@ViewBag.Commission.ToString("c")</dd>
+        <dt class="col-sm-2">Total Owing:</dt>
+        <dd class="col-sm-10">@ViewBag.TotalCost.ToString("c")</dd>
+    </dl>
+</div>
+<hr />
+<a asp-controller="Packages" asp-action="Index" class="btn btn-outline-primary pe-3">Return to All Packages</a>

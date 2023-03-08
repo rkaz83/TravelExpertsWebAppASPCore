@@ -1,0 +1,138 @@
+﻿@*Author : Rabab Kazim Dated feb- 2023*@
+
+@model TravelExpertsData.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<h1> Update Your Profile</h1>
+<hr />
+<div class="row justify-content-evenly">
+    <div class="col-md-9">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           @* <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <input asp-for="CustomerId" class="form-control" />
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>*@
+            <div class="row form-group">
+                <label asp-for="CustFirstName" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustFirstName" class="form-control" />
+                </div>
+
+                <span asp-validation-for="CustFirstName" class="col text-danger"></span>
+            </div>
+
+            <div class="row form-group">
+                <label asp-for="CustLastName" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustLastName" class="form-control" />
+                </div>
+
+                <span asp-validation-for="CustLastName" class="col text-danger"></span>
+            </div>
+
+            <hr />
+
+            <div class="row form-group">
+                <label asp-for="CustAddress" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustAddress" class="form-control" />
+                </div>
+                <span asp-validation-for="CustAddress" class="col text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <label asp-for="CustCity" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustCity" class="form-control" />
+                </div>
+                <span asp-validation-for="CustCity" class="col text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <label asp-for="CustProv" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustProv" class="form-control" />
+                </div>
+                <span asp-validation-for="CustProv" class="col text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <label asp-for="CustCountry" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustCountry" class="form-control" />
+                </div>
+                <span asp-validation-for="CustCountry" class="col text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <label asp-for="CustPostal" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustPostal" class="form-control" />
+                </div>
+                <span asp-validation-for="CustPostal" class="col text-danger"></span>
+            </div>
+
+            <hr />
+
+            <div class="row form-group">
+                <label asp-for="CustHomePhone" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustHomePhone" class="form-control" />
+                </div>
+                <span asp-validation-for="CustHomePhone" class="col text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <label asp-for="CustBusPhone" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustBusPhone" class="form-control" />
+                </div>
+                <span asp-validation-for="CustBusPhone" class="col text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <label asp-for="CustEmail" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="CustEmail" class="form-control" />
+                </div>
+                <span asp-validation-for="CustEmail" class="col text-danger"></span>
+            </div>
+
+            <hr />
+
+            <div class="row form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="Username" class="form-control" />
+                </div>
+                <span asp-validation-for="Username" class="col text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="Password" class="form-control" />
+                </div>
+
+                <span asp-validation-for="Password" class="col text-danger"></span>
+            </div>
+            <div class="row form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <div class="col-sm-5 mb-sm-2">
+                    <input asp-for="ConfirmPassword" id="Password" class="form-control" />
+                </div>
+
+                <span asp-validation-for="ConfirmPassword" class="col text-danger"></span>
+            </div>
+
+            <hr />
+
+            <div class="form-group">
+                <input type="submit" value="Save Changes" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<TravelExpertsData.Models.Agency>
+
+@*Author: Aaron Li
+February 18, 2023*@
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<h1>Contact Us</h1>
+<p>Reach out to any of our Travel Agents at one of our Locations!</p>
+<hr />
+<div>
+    @foreach(var agency in Model)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                Agency
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(agencyModel => agency.AgencyId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(agencyModel => agency.AgncyAddress)
+            </dt>
+            <dd class="col-sm-10">
+                @agency.AgncyAddress <br />
+                @agency.AgncyCity, @agency.AgncyProv, @agency.AgncyCountry <br />
+                @agency.AgncyPostal
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(agencyModel => agency.AgncyPhone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(agencyModel => agency.AgncyPhone)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(agencyModel => agency.AgncyFax)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(agencyModel => agency.AgncyFax)
+            </dd>
+        </dl>
+
+        <button data-bs-toggle="collapse" data-bs-target="#@("Agency"+agency.AgencyId)" class="btn btn-primary">View Agents</button>
+        <div id="@("Agency"+agency.AgencyId)" class="collapse">
+        @foreach(var agent in agency.Agents)
+        {
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">@agent.AgtFirstName @agent.AgtLastName</dt>
+                <dd class="col-sm-10">
+                    @agent.AgtPosition <br />
+                    @agent.AgtBusPhone <br />
+                    @agent.AgtEmail <br />
+                </dd>
+            </dl>
+        }
+        </div>
+        <hr />
+        <br />
+    }
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Return to Home</a>
+</div>

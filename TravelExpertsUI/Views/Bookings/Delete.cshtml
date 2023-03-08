@@ -1,0 +1,57 @@
+﻿@model TravelExpertsData.Models.Booking
+
+@*Author: Aaron Li
+February 18, 2023*@
+
+@{
+    ViewData["Title"] = "Remove Booking";
+}
+
+<h1>Remove from My Bookings</h1>
+
+<h3>Are you sure you want to remove this booking?</h3>
+<hr />
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BookingId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BookingId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BookingDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TravelerCount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TravelerCount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PackageId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PackageId)
+        </dd>
+    </dl>
+</div>
+
+<hr />
+
+<div>
+    <form asp-action="Delete">
+        <input type="submit" value="Remove from My Bookings" class="btn btn-danger pe-3" />
+        <a asp-controller="Bookings" asp-action="Index" class="btn btn-outline-primary pe-3">Return to All Bookings</a>
+    </form>
+</div>
+
